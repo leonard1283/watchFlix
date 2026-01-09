@@ -132,7 +132,8 @@ document.addEventListener('keydown', function(e) {
 });
 
 function back(){
-    location.href = "/index.html";
+    location.href = "index.html";
 
 }
+
 
