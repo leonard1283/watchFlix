@@ -19,7 +19,7 @@ body.authorized {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('./img/background-dash.svg');
+    background-image: url('../img/background-dash.svg');
     background-size: cover;
     filter: brightness(0.7);
     z-index: 0;
@@ -528,4 +528,5 @@ top: 0;
     object-fit: cover;
 
 }
+
 
