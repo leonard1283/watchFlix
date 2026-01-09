@@ -764,7 +764,7 @@ function redirectToUpgrade() {
 }
 
 function openStream(movieId) {
-    window.location.href = `stream.html?id=${movieId}`;
+    window.location.href = `watchFlix/stream.html?id=${movieId}`;
 }
 
 async function fetchKinoCheckTrailer(tmdbId) {
@@ -791,5 +791,6 @@ async function fetchKinoCheckTrailer(tmdbId) {
 
     return null;
 }
+
 
 
