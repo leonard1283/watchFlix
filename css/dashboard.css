@@ -20,7 +20,6 @@ body.authorized {
     width: 100%;
     height: 100%;
     background-image: url('watchFlix/img/background-dash.svg');
-    background-size: cover;
     filter: brightness(0.7);
     z-index: 0;
     background-repeat: no-repeat;            /* Prevent repetition */
@@ -528,6 +527,7 @@ top: 0;
     object-fit: cover;
 
 }
+
 
 
 
