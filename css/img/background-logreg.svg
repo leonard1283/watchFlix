@@ -1,0 +1,36 @@
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient background -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0f0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0f0a;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Radial gradient for glow effect -->
+    <radialGradient id="glowGradient" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#00ff41;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#00ff41;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Main background -->
+  <rect width="1920" height="1080" fill="url(#bgGradient)"/>
+  
+  <!-- Glow effect -->
+  <circle cx="960" cy="540" r="600" fill="url(#glowGradient)"/>
+  
+  <!-- Large play button icon -->
+  <g transform="translate(570, 100)">
+    <circle cx="100" cy="100" r="100" fill="#00ff41" opacity="0.9"/>
+    <polygon points="75,60 75,140 145,100" fill="white"/>
+  </g>
+  
+  <!-- watchFlix logo text (centered) -->
+  <g transform="translate(1050, 240)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="120" font-weight="300" fill="#ffffff" text-anchor="middle">
+      watch<tspan font-weight="700" fill="#00ff41">Flix</tspan>
+    </text>
+    
+  </g>
+  
+</svg>
