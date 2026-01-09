@@ -1,0 +1,68 @@
+<!-- dashboard.html - Add filter controls after the nav-links -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>watchFlix</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+
+    <header class="header">
+        <nav>
+            <div class="logo">
+                <a href="./dashboard.html" style="display: flex; justify-content:center; align-items: center;">
+                    <img src="img/favicon.png" width="50" height="50" class="imgLogo" alt=""> 
+                    watchFlix
+                </a>
+            </div>
+            <div class="btnHeader">
+                <ul class="nav-links">
+                    <li class="btnDash"><a href="./dashboard.html">Home</a></li>
+    
+                    <input type="text" id="searchInput" class="searchInput" placeholder="Search movies…">
+                    
+                    <!-- Add these filter dropdowns -->
+                    <select id="genreFilter" title="Filter by genre">
+                        <option value="">All Genres</option>
+                        <!-- Genres will be populated by JavaScript -->
+                    </select>
+                    
+                    <select id="sortBy" title="Sort by">
+                        <option value="">Sort By</option>
+                        <option value="title_asc">Title (A-Z)</option>
+                        <option value="title_desc">Title (Z-A)</option>
+                        <option value="rating_desc">Rating (High to Low)</option>
+                        <option value="rating_asc">Rating (Low to High)</option>
+                        <option value="year_desc">Year (Newest)</option>
+                        <option value="year_asc">Year (Oldest)</option>
+                        <option value="popularity_desc">Popularity</option>
+                    </select>
+                </ul>
+
+                <div>
+                    <button class="btnOut" onclick="btnLogout()">Log Out</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    
+
+    <!-- Add filter stats display in main section -->
+    <div class="background"></div>
+
+    <main>
+        <section>
+            <div class="anime-grid" id="movieGrid"></div>
+
+            <div id="pagination" style="margin-top:20px; text-align:center;" class="pagin"></div>
+        </section>
+    </main>
+    
+    <script src="/js/dashboard.js"></script>
+    <script src="/js/auth.js"></script>
+</body>
+</html>

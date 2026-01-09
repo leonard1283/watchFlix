@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    background-image: url('/img/background-logreg.svg');
+    background-repeat: no-repeat;            /* Prevent repetition */
+    background-size: cover;                  /* Make it cover entire container */
+    background-position: center;      /* Center the image */
+    background-attachment: fixed;            /* Optional: keep it fixed on scroll */
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.register-box {
+    border-radius: 8px;
+    padding: 60px 48px 40px;
+    width: 100%;
+    max-width: 450px;
+}
+
+.register-box h1 {
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 28px;
+}
+
+.input-group {
+    margin-bottom: 16px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 16px;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder,
+input[type="email"]::placeholder {
+    color: #8c8c8c;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    border-color: white;
+}
+
+.register-btn {
+    width: 100%;
+    padding: 16px;
+    background-color: #7b1fa2;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 24px;
+}
+
+.register-btn:hover {
+    background-color: #8d32b4;
+}
+
+
+.new-user {
+    margin-top: 16px;
+    color: #8c8c8c;
+    font-size: 16px;
+}
+
+.new-user a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.new-user a:hover {
+    text-decoration: underline;
+}
+
+.success{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(100px);
+}
+
+#success{
+    margin: auto;
+    border: none;
+    padding: 20px;
+    width: 30rem;
+    height: 22rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#success h1{
+    position: relative;
+    bottom: 30px;
+}
+
+#success .popMsg{
+    position: relative;
+    bottom: 20px;
+    font-size: 17px;
+}
+
+
+#success:popover-open ~ *{
+    pointer-events: none;
+    filter: blur(10px);
+    backdrop-filter: blur(6px);
+}
+
+
+.proceed{
+    padding: 10px;
+    width: 13rem;
+    height: 40px;
+    font-size: 15px;
+    border-radius: 5px;
+    border-style: none;
+    background-color: #005affd4;
+    color: white;
+    cursor: pointer;
+}
+
+.proceed:hover{
+    background-color: #0059ff8f;
+}
+
+.cbtn{
+    color: gray;
+    font-weight: 700;
+    position: relative;
+    font-size: 20px;
+    float: inline-end;
+    cursor: pointer;
+}
+
+.cbtn:hover{
+    color: rgba(128, 128, 128, 0.74);
+}
+
+.ckImg{
+    position: relative;
+    left: 9px;
+}
+
+.popToDash{
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    top: 15px;
+    color: gray;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.popToDash:hover{
+    color: hsl(0, 0%, 35%);
+    text-decoration: underline;
+}

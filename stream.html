@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream - watchFlix</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="/css/steam.css">
+</head>
+<body data-allow="User">
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="./dashboard.html">
+                    <img src="img/favicon.png" width="50" height="50" class="imgLogo" alt="Logo"> 
+                    watchFlix
+                </a>
+            </div>
+            <button class="back-btn" onclick="back()">
+                ← Back to Dashboard
+            </button>
+        </nav>
+    </header>
+
+    <div class="video-container">
+        <div class="video-wrapper">
+            <div id="videoLoading" class="video-loading">
+                <div class="loading-spinner"></div>
+                <div>Loading movie stream...</div>
+                <small>This may take a few seconds</small>
+            </div>
+            <div id="videoError" class="video-error" style="display: none;">
+                <div>⚠️</div>
+                <div>Unable to load movie stream</div>
+                <small>The movie might not be available or the server is busy</small>
+                <button class="back-btn" onclick="back()" style="margin-top: 20px;">
+                    ← Try Another Movie
+                </button>
+            </div>
+            <iframe id="embedFrame" 
+                    src="" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- Server Selector -->
+        <div class="server-selector">
+            <div class="server-buttons">
+                <button class="server-btn active" onclick="changeServer('2embed')">2embed Server</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="movie-info">
+        <div class="movie-header">
+            <img id="moviePoster" class="movie-poster" src="" alt="Movie Poster">
+            <div class="movie-details">
+                <h1 class="movie-title" id="movieTitle"></h1>
+                <p class="movie-overview" id="movieOverview"></p>
+
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/stream.js"></script>
+</body>
+</html>

@@ -1,0 +1,529 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: #fff;
+}
+
+body.authorized {
+    visibility: visible;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/img/background-dash.svg');
+    background-size: cover;
+    filter: brightness(0.7);
+    z-index: 0;
+    background-repeat: no-repeat;            /* Prevent repetition */
+    background-size: cover;                  /* Make it cover entire container */
+    background-position: center;      /* Center the image */
+    background-attachment: fixed;            /* Optional: keep it fixed on scroll */
+}
+
+/* Header */
+header {
+    background: linear-gradient(180deg, #1a1a1a 0%, rgba(26, 26, 26, 0.95) 100%);
+    padding: 1rem 2rem;
+    position: sticky;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    align-items: center;
+    display: flex;
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #2ECC71 0%, #A3FFCC 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a, .msgFree p {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #667eea;
+}
+
+/* Main Content */
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Anime Grid */
+.anime-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.anime-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: #1a1a1a;
+}
+
+.anime-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
+}
+
+.anime-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+
+.card-badges {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.badge-tv {
+    background: #3b82f6;
+}
+
+.badge-ona {
+    background: #ef4444;
+}
+
+.badge-episode {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.badge-dub {
+    background: #dc2626;
+}
+
+.badge-sub {
+    background: #f59e0b;
+}
+
+.card-info {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.anime-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.3;
+    max-width: 150px;
+}
+
+/* Play Button */
+.play-btn {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+}
+
+.anime-card:hover .play-btn {
+    transform: scale(1.1);
+    background: #fff;
+}
+
+/* Placeholder Images */
+.img-placeholder {
+    width: 100%;
+    height: 320px;
+    background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 50%, #ec4899 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+.imgLogo{
+    position: relative;
+    right: 3px;
+}
+
+.msgFree{
+position: sticky;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #2ECC71;
+width: 100%;
+height: 60px;
+z-index: 1000;
+top: 0;
+}
+
+.msgFree.premiumAcc{
+    display: none;
+}
+
+.msgFree button{
+    padding: 5px;
+    margin-left: 20px;
+    width: 6rem;
+    height: 2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+}
+
+.msgFree button:hover{
+    background-color: hsl(211, 100%, 40%);
+}
+
+/* Modal/Popover */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    position: relative;
+    background: linear-gradient(135deg, #18730d  0%, #4ebb5c  100%);
+    margin: 10% auto;
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    color: white;
+    animation: slideIn 0.3s ease;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+.modal-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.modal-content p {
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.current-plan {
+    font-size: 14px;
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.upgrade-btn, .cancel-btn {
+    margin: 10px 5px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.upgrade-btn {
+    background: white;
+    color: #667eea;
+}
+
+.upgrade-btn:hover {
+    transform: scale(1.05);
+}
+
+.cancel-btn {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.cancel-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.pagin{
+    z-index: 1;
+}
+#pagination{
+    position: relative;
+    z-index: 999;
+}
+
+.btnPag, .pagin button{
+    padding: 10px;
+    border: none;
+    margin-bottom: 10px;
+    background: #098109;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 6rem;
+    height: 4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-left: 10px;
+}
+
+.btnPag:hover, .pagin button:hover{
+    background: #14ad14;
+}
+
+.btnPN{
+    background:#007bff;
+}
+.btnPN:hover{
+    background:hsl(211, 100%, 40%);
+}
+
+#searchInput {
+    padding: 8px 15px;
+    border-radius: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 0.9rem;
+    width: 200px;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #667eea;
+    background: rgba(255, 255, 255, 0.15);
+    width: 250px;
+}
+
+#searchInput::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#genreFilter, #sortBy {
+    padding: 8px 15px;
+    border-radius: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px;
+    padding-right: 35px;
+}
+
+#genreFilter:hover, #sortBy:hover,
+#genreFilter:focus, #sortBy:focus {
+    border-color: #667eea;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+#genreFilter option, #sortBy option {
+    background: #1a1a1a;
+    color: white;
+}
+
+/* No results message */
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    color: #ccc;
+    font-size: 1.2rem;
+}
+
+.btnDash{
+    margin-top: 4px;
+}
+
+.accStats{
+    align-items: center;
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    left: 14.1rem;
+    position: fixed;
+    background: #3bef0e;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    top: 11px;
+    transform: rotate(19deg);
+}
+
+.btnHeader{
+    display: flex;
+    align-items: center;
+    gap: 15rem;
+}
+
+.btnOut{
+    border: none;
+    background-color: rgb(148, 7, 7);
+    color: white;
+    letter-spacing: 0.2px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 5rem;
+}
+
+.btnOut:hover{
+    background-color: rgb(115, 7, 7);
+}
+
+.btnMyAcc{
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 500;
+    margin-right: 20px;
+}
+
+.anime-card {
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+.trailer-preview {
+    position: absolute;
+
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 8px;
+    width: 100%; /* Adjust this to control the width (e.g., 80vw for 80% of viewport width) */
+    padding-bottom: 56.25%; /* This creates the height for a 16:9 aspect ratio (9/16 = 0.5625) */
+
+}
+
+
+.trailer-preview iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.anime-card.hovering img {
+    opacity: 0;
+}
+
+.anime-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
